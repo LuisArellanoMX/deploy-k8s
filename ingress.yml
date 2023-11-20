@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: api-ingress
+spec:
+  rules:
+    - host: api.larellano.com
+      http: 
+        paths: 
+        - path: /getIcecreams
+          pathType: Prefix
+          backend: 
+            service:
+              name: go_api-service
+              port:
+                number: 80

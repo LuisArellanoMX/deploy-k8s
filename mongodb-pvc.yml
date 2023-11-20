@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolumeClain
+metadata: 
+  name: mondodb-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: mondodb-pv
+spec:
+  capacity:
+    storage: 1Gi
+    accessModes:
+      - ReadWriteOnce
+    hostsPath:
+      path: /data/db
