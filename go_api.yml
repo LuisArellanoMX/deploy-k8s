@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: go_api
+      app: go-api
   template:
     metadata:
       labels:
-        app: go_api
+        app: go-api
     spec:
       containers:
         - name: go_api
@@ -22,10 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: go_api-service
+  name: go-api-service
 spec:
   selector:
-    app: go_api
+    app: go-api
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80

@@ -7,10 +7,10 @@ spec:
     - host: api.larellano.com
       http: 
         paths: 
-        - path: /getIcecreams
+        - path: /icecream
           pathType: Prefix
           backend: 
             service:
-              name: go_api-service
+              name: go-api-service
               port:
                 number: 80
